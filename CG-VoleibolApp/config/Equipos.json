@@ -1,0 +1,34 @@
+{
+"Equipos":
+	[
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		},
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		},
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		},
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		},
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		},
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		},
+		{
+			"NombreLargo":"NombreUno",
+			"NombreCorto":"NU"
+		}
+		
+	]
+}

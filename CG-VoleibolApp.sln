@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG-VoleibolApp", "CG-VoleibolApp\CG-VoleibolApp.csproj", "{FCFACD1B-660A-442E-90D0-27DCEEBC6659}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCFACD1B-660A-442E-90D0-27DCEEBC6659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFACD1B-660A-442E-90D0-27DCEEBC6659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFACD1B-660A-442E-90D0-27DCEEBC6659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFACD1B-660A-442E-90D0-27DCEEBC6659}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5AEB3E6-4A25-4A49-A492-9CB501F8DB8F}
+	EndGlobalSection
+EndGlobal
