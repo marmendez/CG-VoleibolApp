@@ -50,11 +50,11 @@
             this.lblSet3Vis = new System.Windows.Forms.Label();
             this.lblSet4Vis = new System.Windows.Forms.Label();
             this.lblSet5Vis = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblSet5Loc = new System.Windows.Forms.Label();
+            this.lblSet4Loc = new System.Windows.Forms.Label();
+            this.lblSet3Loc = new System.Windows.Forms.Label();
+            this.lblSet2Loc = new System.Windows.Forms.Label();
+            this.lblSet1Loc = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -130,6 +130,7 @@
             this.btnMinusVisitante.Size = new System.Drawing.Size(50, 55);
             this.btnMinusVisitante.TabIndex = 6;
             this.btnMinusVisitante.UseVisualStyleBackColor = false;
+            this.btnMinusVisitante.Click += new System.EventHandler(this.btnMinusVisitante_Click);
             // 
             // btnPlusVisitante
             // 
@@ -142,6 +143,7 @@
             this.btnPlusVisitante.Size = new System.Drawing.Size(50, 55);
             this.btnPlusVisitante.TabIndex = 7;
             this.btnPlusVisitante.UseVisualStyleBackColor = false;
+            this.btnPlusVisitante.Click += new System.EventHandler(this.btnPlusVisitante_Click);
             // 
             // btnPlusLocal
             // 
@@ -154,6 +156,7 @@
             this.btnPlusLocal.Size = new System.Drawing.Size(50, 55);
             this.btnPlusLocal.TabIndex = 9;
             this.btnPlusLocal.UseVisualStyleBackColor = false;
+            this.btnPlusLocal.Click += new System.EventHandler(this.btnPlusLocal_Click);
             // 
             // btnMinusLocal
             // 
@@ -166,6 +169,7 @@
             this.btnMinusLocal.Size = new System.Drawing.Size(50, 55);
             this.btnMinusLocal.TabIndex = 8;
             this.btnMinusLocal.UseVisualStyleBackColor = false;
+            this.btnMinusLocal.Click += new System.EventHandler(this.btnMinusLocal_Click);
             // 
             // label3
             // 
@@ -274,9 +278,9 @@
             this.lblSet1Vis.ForeColor = System.Drawing.Color.White;
             this.lblSet1Vis.Location = new System.Drawing.Point(332, 218);
             this.lblSet1Vis.Name = "lblSet1Vis";
-            this.lblSet1Vis.Size = new System.Drawing.Size(49, 37);
+            this.lblSet1Vis.Size = new System.Drawing.Size(0, 37);
             this.lblSet1Vis.TabIndex = 16;
-            this.lblSet1Vis.Text = "00";
+            this.lblSet1Vis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSet2Vis
             // 
@@ -288,6 +292,7 @@
             this.lblSet2Vis.Size = new System.Drawing.Size(49, 37);
             this.lblSet2Vis.TabIndex = 17;
             this.lblSet2Vis.Text = "00";
+            this.lblSet2Vis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSet3Vis
             // 
@@ -299,6 +304,7 @@
             this.lblSet3Vis.Size = new System.Drawing.Size(49, 37);
             this.lblSet3Vis.TabIndex = 18;
             this.lblSet3Vis.Text = "00";
+            this.lblSet3Vis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSet4Vis
             // 
@@ -310,6 +316,7 @@
             this.lblSet4Vis.Size = new System.Drawing.Size(49, 37);
             this.lblSet4Vis.TabIndex = 19;
             this.lblSet4Vis.Text = "00";
+            this.lblSet4Vis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSet5Vis
             // 
@@ -321,61 +328,66 @@
             this.lblSet5Vis.Size = new System.Drawing.Size(49, 37);
             this.lblSet5Vis.TabIndex = 20;
             this.lblSet5Vis.Text = "00";
+            this.lblSet5Vis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // lblSet5Loc
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(233, 218);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 37);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "00";
+            this.lblSet5Loc.AutoSize = true;
+            this.lblSet5Loc.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSet5Loc.ForeColor = System.Drawing.Color.White;
+            this.lblSet5Loc.Location = new System.Drawing.Point(233, 218);
+            this.lblSet5Loc.Name = "lblSet5Loc";
+            this.lblSet5Loc.Size = new System.Drawing.Size(49, 37);
+            this.lblSet5Loc.TabIndex = 27;
+            this.lblSet5Loc.Text = "00";
+            this.lblSet5Loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // lblSet4Loc
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(188, 218);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 37);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "00";
+            this.lblSet4Loc.AutoSize = true;
+            this.lblSet4Loc.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSet4Loc.ForeColor = System.Drawing.Color.White;
+            this.lblSet4Loc.Location = new System.Drawing.Point(188, 218);
+            this.lblSet4Loc.Name = "lblSet4Loc";
+            this.lblSet4Loc.Size = new System.Drawing.Size(49, 37);
+            this.lblSet4Loc.TabIndex = 26;
+            this.lblSet4Loc.Text = "00";
+            this.lblSet4Loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // lblSet3Loc
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(142, 218);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 37);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "00";
+            this.lblSet3Loc.AutoSize = true;
+            this.lblSet3Loc.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSet3Loc.ForeColor = System.Drawing.Color.White;
+            this.lblSet3Loc.Location = new System.Drawing.Point(142, 218);
+            this.lblSet3Loc.Name = "lblSet3Loc";
+            this.lblSet3Loc.Size = new System.Drawing.Size(49, 37);
+            this.lblSet3Loc.TabIndex = 25;
+            this.lblSet3Loc.Text = "00";
+            this.lblSet3Loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label14
+            // lblSet2Loc
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(96, 218);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 37);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "00";
+            this.lblSet2Loc.AutoSize = true;
+            this.lblSet2Loc.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSet2Loc.ForeColor = System.Drawing.Color.White;
+            this.lblSet2Loc.Location = new System.Drawing.Point(96, 218);
+            this.lblSet2Loc.Name = "lblSet2Loc";
+            this.lblSet2Loc.Size = new System.Drawing.Size(49, 37);
+            this.lblSet2Loc.TabIndex = 24;
+            this.lblSet2Loc.Text = "00";
+            this.lblSet2Loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // lblSet1Loc
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(50, 218);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 37);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "00";
+            this.lblSet1Loc.AutoSize = true;
+            this.lblSet1Loc.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSet1Loc.ForeColor = System.Drawing.Color.White;
+            this.lblSet1Loc.Location = new System.Drawing.Point(50, 218);
+            this.lblSet1Loc.Name = "lblSet1Loc";
+            this.lblSet1Loc.Size = new System.Drawing.Size(0, 37);
+            this.lblSet1Loc.TabIndex = 23;
+            this.lblSet1Loc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -384,7 +396,7 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Location = new System.Drawing.Point(51, 197);
+            this.panel2.Location = new System.Drawing.Point(53, 197);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(218, 20);
             this.panel2.TabIndex = 22;
@@ -449,7 +461,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(15, 199);
+            this.label21.Location = new System.Drawing.Point(14, 199);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(43, 16);
             this.label21.TabIndex = 21;
@@ -460,22 +472,26 @@
             this.lblPtsVis.AutoSize = true;
             this.lblPtsVis.Font = new System.Drawing.Font("Nirmala UI", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPtsVis.ForeColor = System.Drawing.Color.White;
-            this.lblPtsVis.Location = new System.Drawing.Point(434, 137);
+            this.lblPtsVis.Location = new System.Drawing.Point(448, 137);
             this.lblPtsVis.Name = "lblPtsVis";
-            this.lblPtsVis.Size = new System.Drawing.Size(75, 59);
+            this.lblPtsVis.Size = new System.Drawing.Size(50, 59);
             this.lblPtsVis.TabIndex = 28;
-            this.lblPtsVis.Text = "00";
+            this.lblPtsVis.Text = "0";
+            this.lblPtsVis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPtsVis.TextChanged += new System.EventHandler(this.lblPtsVis_TextChanged);
             // 
             // lblPtsLoc
             // 
             this.lblPtsLoc.AutoSize = true;
             this.lblPtsLoc.Font = new System.Drawing.Font("Nirmala UI", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPtsLoc.ForeColor = System.Drawing.Color.White;
-            this.lblPtsLoc.Location = new System.Drawing.Point(72, 137);
+            this.lblPtsLoc.Location = new System.Drawing.Point(84, 137);
             this.lblPtsLoc.Name = "lblPtsLoc";
-            this.lblPtsLoc.Size = new System.Drawing.Size(75, 59);
+            this.lblPtsLoc.Size = new System.Drawing.Size(50, 59);
             this.lblPtsLoc.TabIndex = 29;
-            this.lblPtsLoc.Text = "00";
+            this.lblPtsLoc.Text = "0";
+            this.lblPtsLoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPtsLoc.TextChanged += new System.EventHandler(this.lblPtsLoc_TextChanged);
             // 
             // lblSetWinnerVis
             // 
@@ -488,6 +504,7 @@
             this.lblSetWinnerVis.Size = new System.Drawing.Size(33, 37);
             this.lblSetWinnerVis.TabIndex = 30;
             this.lblSetWinnerVis.Text = "0";
+            this.lblSetWinnerVis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSetWinnerLoc
             // 
@@ -500,6 +517,7 @@
             this.lblSetWinnerLoc.Size = new System.Drawing.Size(33, 37);
             this.lblSetWinnerLoc.TabIndex = 31;
             this.lblSetWinnerLoc.Text = "0";
+            this.lblSetWinnerLoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMatch
             // 
@@ -542,8 +560,9 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(139, 28);
             this.btnReset.TabIndex = 35;
-            this.btnReset.Text = "Reiniciar";
+            this.btnReset.Text = "Finalizar Set";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label22
             // 
@@ -560,10 +579,25 @@
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Nirmala UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.Location = new System.Drawing.Point(272, 69);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.ReadOnly = true;
             this.numericUpDown1.Size = new System.Drawing.Size(37, 43);
             this.numericUpDown1.TabIndex = 38;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // frmLives
             // 
@@ -581,11 +615,11 @@
             this.Controls.Add(this.lblSetWinnerVis);
             this.Controls.Add(this.lblPtsLoc);
             this.Controls.Add(this.lblPtsVis);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.lblSet5Loc);
+            this.Controls.Add(this.lblSet4Loc);
+            this.Controls.Add(this.lblSet3Loc);
+            this.Controls.Add(this.lblSet2Loc);
+            this.Controls.Add(this.lblSet1Loc);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.lblSet5Vis);
@@ -643,11 +677,11 @@
         private System.Windows.Forms.Label lblSet3Vis;
         private System.Windows.Forms.Label lblSet4Vis;
         private System.Windows.Forms.Label lblSet5Vis;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblSet5Loc;
+        private System.Windows.Forms.Label lblSet4Loc;
+        private System.Windows.Forms.Label lblSet3Loc;
+        private System.Windows.Forms.Label lblSet2Loc;
+        private System.Windows.Forms.Label lblSet1Loc;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;

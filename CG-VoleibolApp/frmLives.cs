@@ -41,7 +41,32 @@ namespace CG_VoleibolApp
             }
         }
 
-        
+        // Metodos para manejar los puntos
+        // Metodo de incremento
+        private void pointIncrement(Control lab, string val)
+        {
+            int valInt = Convert.ToInt32(val);
+            valInt = valInt + 1;
+            lab.Text = Convert.ToString(valInt);
+        }
+
+        // Metodo de decremento
+        private void pointDecrement(Control lab, string val)
+        {
+            int valInt = Convert.ToInt32(val);
+            valInt = valInt - 1;
+            if (valInt < 0)            
+                valInt = 0;
+            
+            lab.Text = Convert.ToString(valInt);
+        }
+
+        // Metodo para actualizar los puntos en los sets
+        private void updatePointSet(Control lab, string val)
+        {
+            lab.Text = val;
+        }
+               
 
         private void frmLives_Load(object sender, EventArgs e)
         {
@@ -110,6 +135,114 @@ namespace CG_VoleibolApp
 
             winsockCall.wsSendData("[Logo2]=" + cbxEqVisitante.Text + ".png" + "\r\n");
             winsockCall.wsSendData("[HomeLong2]=" + commones.GetValueConfig(cbxEqVisitante.Text) + "\r\n");
+        }
+
+        private void btnPlusLocal_Click(object sender, EventArgs e)
+        {
+            pointIncrement(lblPtsLoc, lblPtsLoc.Text);
+        }
+
+        private void btnMinusLocal_Click(object sender, EventArgs e)
+        {
+            pointDecrement(lblPtsLoc, lblPtsLoc.Text);
+        }
+
+        private void btnPlusVisitante_Click(object sender, EventArgs e)
+        {
+            pointIncrement(lblPtsVis, lblPtsVis.Text);
+        }
+
+        private void btnMinusVisitante_Click(object sender, EventArgs e)
+        {
+            pointDecrement(lblPtsVis, lblPtsVis.Text);
+        }
+
+        private void lblPtsLoc_TextChanged(object sender, EventArgs e)
+        {           
+
+            switch (numericUpDown1.Value)
+            {
+                case 1:
+                    {
+                        updatePointSet(lblSet1Loc, lblPtsLoc.Text);
+                        break;
+                    }
+                case 2:
+                    {
+                        updatePointSet(lblSet2Loc, lblPtsLoc.Text);
+                        break;
+                    }
+                case 3:
+                    {
+                        updatePointSet(lblSet3Loc, lblPtsLoc.Text);
+                        break;
+                    }
+                case 4:
+                    {
+                        updatePointSet(lblSet4Loc, lblPtsLoc.Text);
+                        break;
+                    }
+                case 5:
+                    {
+                        updatePointSet(lblSet5Loc, lblPtsLoc.Text);
+                        break;
+                    }
+                default:
+                    break;
+            }            
+        }
+
+        private void lblPtsVis_TextChanged(object sender, EventArgs e)
+        {            
+
+            switch (numericUpDown1.Value)
+            {
+                case 1:
+                    {
+                        updatePointSet(lblSet1Vis, lblPtsVis.Text);
+                        break;
+                    }
+                case 2:
+                    {
+                        updatePointSet(lblSet2Vis, lblPtsVis.Text);
+                        break;
+                    }
+                case 3:
+                    {
+                        updatePointSet(lblSet3Vis, lblPtsVis.Text);
+                        break;
+                    }
+                case 4:
+                    {
+                        updatePointSet(lblSet4Vis, lblPtsVis.Text);
+                        break;
+                    }
+                case 5:
+                    {
+                        updatePointSet(lblSet5Vis, lblPtsVis.Text);
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            int ptsLoc, ptsVis;
+            ptsLoc = Convert.ToInt32(lblPtsLoc.Text);
+            ptsVis = Convert.ToInt32(lblPtsVis.Text);
+            if (ptsLoc > ptsVis)
+            {
+                int temp = Convert.ToInt32(lblSetWinnerLoc.Text);
+                temp = temp + 1;
+                lblSetWinnerLoc.Text = Convert.ToString(temp);
+            } else
+            {
+                int temp = Convert.ToInt32(lblSetWinnerVis.Text);
+                temp = temp + 1;
+                lblSetWinnerVis.Text = Convert.ToString(temp);
+            }
         }
     }
 }
