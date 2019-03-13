@@ -18,6 +18,19 @@ namespace CG_VoleibolApp
             InitializeComponent();
         }
 
+        public void wsConnect(string ipServer, int portServer)
+        {
+            axWinsock1.Close();
+            axWinsock1.RemoteHost = ipServer;
+            axWinsock1.RemotePort = portServer;
+            axWinsock1.Connect();
+        }
+
+        public void wsSendData(string dataCadena)
+        {
+            axWinsock1.SendData(dataCadena);
+        }
+
         private void SetFocusStyle(Button mybotton)
         {
             mybotton.BackColor = Color.FromArgb(0, 29, 38);

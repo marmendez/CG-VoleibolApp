@@ -34,6 +34,7 @@ namespace CG_VoleibolApp
             // Buscar el valor del key que corresponde al folder de conf. principal y asignarlo al textbox
             txtbPlayersFolder.Text = commones.GetValueConfig("pathPlayersNamesFolder");
             txtbTeamsFolder.Text = commones.GetValueConfig("pathTeamsNamesFolder");
+            tbxProyectosXML.Text = commones.GetValueConfig("pathProjectXML");
         }
 
         private void btnFindFolderTeams_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace CG_VoleibolApp
             openFD.ShowDialog();
             openFD.Title = "Abrir Archivos de Nombres de Equipos";
             openFD.DefaultExt = "txt";
-            openFD.InitialDirectory = @"C:\";
+            //openFD.InitialDirectory = @"C:\";
             openFD.RestoreDirectory = true;
             openFD.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFD.Multiselect = false;
@@ -60,7 +61,7 @@ namespace CG_VoleibolApp
             openFD2.ShowDialog();
             openFD2.Title = "Abrir Archivos de Nombres de Jugadores";
             openFD2.DefaultExt = "txt";
-            openFD2.InitialDirectory = @"C:\";
+            //openFD2.InitialDirectory = @"C:\";
             openFD2.RestoreDirectory = true;
             openFD2.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFD2.Multiselect = false;
@@ -70,6 +71,23 @@ namespace CG_VoleibolApp
             commones.UpdateValueConfig("pathPlayersNamesFolder", txtbPlayersFolder.Text);
         }
 
-        
+        private void btnFindProjectFile_Click(object sender, EventArgs e)
+        {
+            // Creamos y configuramos el cuadro de dialog de busqueda de carpetas
+            FolderBrowserDialog folderB = new FolderBrowserDialog();
+            folderB.ShowNewFolderButton = true;
+
+            DialogResult dr = folderB.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                tbxProyectosXML.Text = folderB.SelectedPath;
+                Environment.SpecialFolder root = folderB.RootFolder;
+
+                // Actualizamos el archivo de configuracion
+                commones.UpdateValueConfig("pathProjectXML", tbxProyectosXML.Text);
+            }
+
+            
+        }
     }
 }

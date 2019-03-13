@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.pnlContainer = new System.Windows.Forms.Panel();
-            this.pnlTitle = new System.Windows.Forms.Panel();
-            this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlShowChild = new System.Windows.Forms.Panel();
+            this.pnlLeft = new System.Windows.Forms.Panel();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnLives = new System.Windows.Forms.Button();
+            this.pnlTitle = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.axWinsock1 = new AxMSWinsockLib.AxWinsock();
             this.pnlContainer.SuspendLayout();
-            this.pnlTitle.SuspendLayout();
             this.pnlLeft.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWinsock1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlContainer
@@ -53,28 +56,6 @@
             this.pnlContainer.Size = new System.Drawing.Size(784, 561);
             this.pnlContainer.TabIndex = 0;
             // 
-            // pnlTitle
-            // 
-            this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
-            this.pnlTitle.Controls.Add(this.pictureBox1);
-            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(784, 34);
-            this.pnlTitle.TabIndex = 0;
-            this.pnlTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitle_MouseDown);
-            // 
-            // pnlLeft
-            // 
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.pnlLeft.Controls.Add(this.btnSetting);
-            this.pnlLeft.Controls.Add(this.btnLives);
-            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 34);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(190, 527);
-            this.pnlLeft.TabIndex = 1;
-            // 
             // pnlShowChild
             // 
             this.pnlShowChild.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -83,6 +64,18 @@
             this.pnlShowChild.Name = "pnlShowChild";
             this.pnlShowChild.Size = new System.Drawing.Size(594, 527);
             this.pnlShowChild.TabIndex = 2;
+            // 
+            // pnlLeft
+            // 
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.pnlLeft.Controls.Add(this.axWinsock1);
+            this.pnlLeft.Controls.Add(this.btnSetting);
+            this.pnlLeft.Controls.Add(this.btnLives);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 34);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(190, 527);
+            this.pnlLeft.TabIndex = 1;
             // 
             // btnSetting
             // 
@@ -95,7 +88,7 @@
             this.btnSetting.ForeColor = System.Drawing.Color.White;
             this.btnSetting.Image = global::CG_VoleibolApp.Properties.Resources.config;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 55);
+            this.btnSetting.Location = new System.Drawing.Point(0, 53);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(190, 47);
             this.btnSetting.TabIndex = 1;
@@ -114,7 +107,7 @@
             this.btnLives.ForeColor = System.Drawing.Color.White;
             this.btnLives.Image = global::CG_VoleibolApp.Properties.Resources.tv;
             this.btnLives.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLives.Location = new System.Drawing.Point(0, 6);
+            this.btnLives.Location = new System.Drawing.Point(0, 2);
             this.btnLives.Name = "btnLives";
             this.btnLives.Size = new System.Drawing.Size(190, 47);
             this.btnLives.TabIndex = 0;
@@ -122,9 +115,20 @@
             this.btnLives.UseVisualStyleBackColor = true;
             this.btnLives.Click += new System.EventHandler(this.btnLives_Click);
             // 
+            // pnlTitle
+            // 
+            this.pnlTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(95)))), ((int)(((byte)(197)))));
+            this.pnlTitle.Controls.Add(this.pictureBox1);
+            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(784, 34);
+            this.pnlTitle.TabIndex = 0;
+            this.pnlTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitle_MouseDown);
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::CG_VoleibolApp.Properties.Resources.appbar_3d_x;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(756, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(20, 20);
@@ -132,6 +136,15 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // axWinsock1
+            // 
+            this.axWinsock1.Enabled = true;
+            this.axWinsock1.Location = new System.Drawing.Point(48, 428);
+            this.axWinsock1.Name = "axWinsock1";
+            this.axWinsock1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWinsock1.OcxState")));
+            this.axWinsock1.Size = new System.Drawing.Size(28, 28);
+            this.axWinsock1.TabIndex = 2;
             // 
             // frmDashboard
             // 
@@ -144,9 +157,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.pnlContainer.ResumeLayout(false);
-            this.pnlTitle.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
+            this.pnlTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWinsock1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,6 +174,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLives;
         private System.Windows.Forms.Button btnSetting;
+        private AxMSWinsockLib.AxWinsock axWinsock1;
     }
 }
 

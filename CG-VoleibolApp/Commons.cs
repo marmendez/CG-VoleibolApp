@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets;
 using System.Configuration;
 
 namespace CG_VoleibolApp
@@ -29,5 +31,8 @@ namespace CG_VoleibolApp
             conf.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
         }
+
+        
+        
     }
 }

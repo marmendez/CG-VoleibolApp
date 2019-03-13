@@ -37,6 +37,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtbPlayersFolder = new System.Windows.Forms.TextBox();
             this.btnFindFolderPlayer = new System.Windows.Forms.Button();
+            this.btnFindProjectFile = new System.Windows.Forms.Button();
+            this.tbxProyectosXML = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,10 +67,11 @@
             // 
             // txtbTeamsFolder
             // 
-            this.txtbTeamsFolder.Location = new System.Drawing.Point(12, 73);
+            this.txtbTeamsFolder.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbTeamsFolder.Location = new System.Drawing.Point(12, 70);
             this.txtbTeamsFolder.Name = "txtbTeamsFolder";
             this.txtbTeamsFolder.ReadOnly = true;
-            this.txtbTeamsFolder.Size = new System.Drawing.Size(313, 20);
+            this.txtbTeamsFolder.Size = new System.Drawing.Size(313, 22);
             this.txtbTeamsFolder.TabIndex = 3;
             // 
             // btnFindFolderTeams
@@ -97,7 +101,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 113);
+            this.label3.Location = new System.Drawing.Point(9, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(300, 16);
             this.label3.TabIndex = 5;
@@ -105,14 +109,17 @@
             // 
             // txtbPlayersFolder
             // 
-            this.txtbPlayersFolder.Location = new System.Drawing.Point(15, 132);
+            this.txtbPlayersFolder.Enabled = false;
+            this.txtbPlayersFolder.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbPlayersFolder.Location = new System.Drawing.Point(12, 129);
             this.txtbPlayersFolder.Name = "txtbPlayersFolder";
             this.txtbPlayersFolder.ReadOnly = true;
-            this.txtbPlayersFolder.Size = new System.Drawing.Size(310, 20);
+            this.txtbPlayersFolder.Size = new System.Drawing.Size(313, 22);
             this.txtbPlayersFolder.TabIndex = 6;
             // 
             // btnFindFolderPlayer
             // 
+            this.btnFindFolderPlayer.Enabled = false;
             this.btnFindFolderPlayer.Image = ((System.Drawing.Image)(resources.GetObject("btnFindFolderPlayer.Image")));
             this.btnFindFolderPlayer.Location = new System.Drawing.Point(331, 107);
             this.btnFindFolderPlayer.Name = "btnFindFolderPlayer";
@@ -121,12 +128,45 @@
             this.btnFindFolderPlayer.UseVisualStyleBackColor = true;
             this.btnFindFolderPlayer.Click += new System.EventHandler(this.btnFindFolderPlayer_Click);
             // 
+            // btnFindProjectFile
+            // 
+            this.btnFindProjectFile.Image = ((System.Drawing.Image)(resources.GetObject("btnFindProjectFile.Image")));
+            this.btnFindProjectFile.Location = new System.Drawing.Point(331, 164);
+            this.btnFindProjectFile.Name = "btnFindProjectFile";
+            this.btnFindProjectFile.Size = new System.Drawing.Size(75, 45);
+            this.btnFindProjectFile.TabIndex = 10;
+            this.btnFindProjectFile.UseVisualStyleBackColor = true;
+            this.btnFindProjectFile.Click += new System.EventHandler(this.btnFindProjectFile_Click);
+            // 
+            // tbxProyectosXML
+            // 
+            this.tbxProyectosXML.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxProyectosXML.Location = new System.Drawing.Point(12, 186);
+            this.tbxProyectosXML.Name = "tbxProyectosXML";
+            this.tbxProyectosXML.ReadOnly = true;
+            this.tbxProyectosXML.Size = new System.Drawing.Size(313, 22);
+            this.tbxProyectosXML.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(9, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(244, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Archivos de Proyectos Black Magic:";
+            // 
             // frmConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(584, 486);
+            this.Controls.Add(this.btnFindProjectFile);
+            this.Controls.Add(this.tbxProyectosXML);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnFindFolderPlayer);
             this.Controls.Add(this.txtbPlayersFolder);
             this.Controls.Add(this.label3);
@@ -155,5 +195,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbPlayersFolder;
         private System.Windows.Forms.Button btnFindFolderPlayer;
+        private System.Windows.Forms.Button btnFindProjectFile;
+        private System.Windows.Forms.TextBox tbxProyectosXML;
+        private System.Windows.Forms.Label label4;
     }
 }
