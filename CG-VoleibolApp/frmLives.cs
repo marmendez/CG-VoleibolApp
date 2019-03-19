@@ -127,6 +127,9 @@ namespace CG_VoleibolApp
             // Nombre equipos -- Buscando los nombres largos desde el valor en el App.config
             winsockCall.wsSendData("[HomeLong1]=" + commones.GetValueConfig(cbxLocal.Text) + "\r\n");
             winsockCall.wsSendData("[HomeLong2]=" + commones.GetValueConfig(cbxEqVisitante.Text) + "\r\n");
+            // Nombre equipos -- Setiando los nombres cortos desde el valor en el App.config
+            winsockCall.wsSendData("[Eq1]=" + commones.GetValueConfig(cbxLocal.Text).Substring(0, 3) + "\r\n");
+            winsockCall.wsSendData("[Eq2]=" + commones.GetValueConfig(cbxEqVisitante.Text).Substring(0, 3) + "\r\n");
 
         }
 
@@ -135,26 +138,31 @@ namespace CG_VoleibolApp
 
             winsockCall.wsSendData("[Logo2]=" + cbxEqVisitante.Text + ".png" + "\r\n");
             winsockCall.wsSendData("[HomeLong2]=" + commones.GetValueConfig(cbxEqVisitante.Text) + "\r\n");
+            winsockCall.wsSendData("[Eq2]=" + commones.GetValueConfig(cbxEqVisitante.Text).Substring(0, 3) + "\r\n");
         }
 
         private void btnPlusLocal_Click(object sender, EventArgs e)
         {
             pointIncrement(lblPtsLoc, lblPtsLoc.Text);
+            winsockCall.wsSendData("[Pts1]=" + lblPtsLoc.Text + "\r\n");
         }
 
         private void btnMinusLocal_Click(object sender, EventArgs e)
         {
             pointDecrement(lblPtsLoc, lblPtsLoc.Text);
+            winsockCall.wsSendData("[Pts1]=" + lblPtsLoc.Text + "\r\n");
         }
 
         private void btnPlusVisitante_Click(object sender, EventArgs e)
         {
             pointIncrement(lblPtsVis, lblPtsVis.Text);
+            winsockCall.wsSendData("[Pts2]=" + lblPtsVis.Text + "\r\n");
         }
 
         private void btnMinusVisitante_Click(object sender, EventArgs e)
         {
             pointDecrement(lblPtsVis, lblPtsVis.Text);
+            winsockCall.wsSendData("[Pts2]=" + lblPtsVis.Text + "\r\n");
         }
 
         private void lblPtsLoc_TextChanged(object sender, EventArgs e)
@@ -237,11 +245,126 @@ namespace CG_VoleibolApp
                 int temp = Convert.ToInt32(lblSetWinnerLoc.Text);
                 temp = temp + 1;
                 lblSetWinnerLoc.Text = Convert.ToString(temp);
-            } else
+            } else if (ptsVis > ptsLoc)
             {
                 int temp = Convert.ToInt32(lblSetWinnerVis.Text);
                 temp = temp + 1;
                 lblSetWinnerVis.Text = Convert.ToString(temp);
+            }
+
+            lblPtsLoc.Text = "0";
+            lblPtsVis.Text = "0";
+
+            switch (numericUpDown1.Value)
+            {
+                case 1:
+                    {
+                        lblSet1Loc.Text = Convert.ToString(ptsLoc);
+                        lblSet1Vis.Text = Convert.ToString(ptsVis);
+                        break;
+                    }
+                case 2:
+                    {
+                        lblSet2Loc.Text = Convert.ToString(ptsLoc);
+                        lblSet2Vis.Text = Convert.ToString(ptsVis);
+                        break;
+                    }
+                case 3:
+                    {
+                        lblSet3Loc.Text = Convert.ToString(ptsLoc);
+                        lblSet3Vis.Text = Convert.ToString(ptsVis);
+                        break;
+                    }
+                case 4:
+                    {
+                        lblSet4Loc.Text = Convert.ToString(ptsLoc);
+                        lblSet4Vis.Text = Convert.ToString(ptsVis);
+                        break;
+                    }
+                case 5:
+                    {
+                        lblSet5Loc.Text = Convert.ToString(ptsLoc);
+                        lblSet5Vis.Text = Convert.ToString(ptsVis);
+                        break;
+                    }
+                default:
+                    break;
+            }
+
+            
+            if (numericUpDown1.Value <= 4)
+            {
+                numericUpDown1.Value++;
+            }
+
+
+            ptsLoc = 0; ptsVis = 0;
+
+        }
+
+        private void lblSet1Loc_MouseHover(object sender, EventArgs e)
+        {
+            new ToolTip().SetToolTip(lblSet1Loc, "Click derecho para incrementar, izquierdo para disminuir");
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            switch (numericUpDown1.Value)
+            {
+                case 1:
+                    {
+                        lblPtsLoc.Text = lblSet1Loc.Text;
+                        lblPtsVis.Text = lblSet1Vis.Text;
+                        break;
+                    }
+                case 2:
+                    {
+                        lblPtsLoc.Text = lblSet2Loc.Text;
+                        lblPtsVis.Text = lblSet2Vis.Text;
+                        break;
+                    }
+                case 3:
+                    {
+                        lblPtsLoc.Text = lblSet3Loc.Text;
+                        lblPtsVis.Text = lblSet3Vis.Text;
+                        break;
+                    }
+                case 4:
+                    {
+                        lblPtsLoc.Text = lblSet4Loc.Text;
+                        lblPtsVis.Text = lblSet4Vis.Text;
+                        break;
+                    }
+                case 5:
+                    {
+                        lblPtsLoc.Text = lblSet5Loc.Text;
+                        lblPtsVis.Text = lblSet5Vis.Text;
+                        break;
+                    }
+                default:
+                    break;
+            }
+        }
+
+        private void btnScorebox_Click(object sender, EventArgs e)
+        {
+            string pathProjects = commones.GetValueConfig("pathProjectXML");
+
+            winsockCall.wsSendData("[Set1]=" + lblSetWinnerLoc.Text + "\r\n");
+            winsockCall.wsSendData("[Set2]=" + lblSetWinnerVis.Text + "\r\n");
+
+            winsockCall.wsSendData("[Pts1]=" + lblPtsLoc.Text + "\r\n");
+            winsockCall.wsSendData("[Pts2]=" + lblPtsVis.Text + "\r\n");
+
+            if (btnScorebox.BackColor == Color.Lime)
+            {
+                winsockCall.wsSendData(PROJECT_START + pathProjects + "\\Scorebug.xml" + "\r\n");
+                btnScorebox.BackColor = Color.Red;
+            }
+            else
+            {
+                winsockCall.wsSendData(PROJECT_STOP + pathProjects + "\\Scorebug.xml" + "\r\n");
+                btnScorebox.BackColor = Color.Lime;
             }
         }
     }
